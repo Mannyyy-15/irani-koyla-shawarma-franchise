@@ -54,12 +54,12 @@ export const FranchiseGallerySection: React.FC = () => {
           </div>
         </div>
 
-        {/* Uniform Grid - All images same size */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        {/* 2-Column Mobile Grid for Compact Fast Browsing */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {galleryItems.map((item, idx) => (
             <div
               key={idx}
-              className="relative aspect-[4/3] bg-[#150d0a] border border-[var(--border-ember)] overflow-hidden group shadow-xl"
+              className="relative aspect-[4/3] bg-[#150d0a] border border-[var(--border-ember)] rounded-xl sm:rounded-2xl overflow-hidden group shadow-xl"
             >
               <img
                 src={item.image}
@@ -69,13 +69,13 @@ export const FranchiseGallerySection: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#080402]/90 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
 
               {/* Minimal Top Tag */}
-              <div className="absolute top-3 left-3 bg-[#080402]/90 backdrop-blur-sm border border-[var(--border-ember)] text-[#ffb703] px-3 py-1 text-[11px] font-condensed font-extrabold tracking-widest uppercase">
+              <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-[#080402]/90 backdrop-blur-sm border border-[var(--border-ember)] text-[#ffb703] px-2 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[11px] font-condensed font-extrabold tracking-widest uppercase rounded">
                 {item.category}
               </div>
 
               {/* Minimal Bottom Title */}
-              <div className="absolute bottom-3 left-3 right-3">
-                <h3 className="font-condensed font-extrabold text-base sm:text-lg text-white uppercase tracking-wide">
+              <div className="absolute bottom-2 left-2 right-2 sm:bottom-3 sm:left-3 sm:right-3">
+                <h3 className="font-condensed font-extrabold text-xs sm:text-lg text-white uppercase tracking-wide leading-tight line-clamp-1">
                   {item.title}
                 </h3>
               </div>

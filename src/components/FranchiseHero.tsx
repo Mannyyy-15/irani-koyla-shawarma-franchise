@@ -58,7 +58,7 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
   const resolvedFontSize = fontSize ?? BASE_FONT_SIZE * FALLBACK_SCALE;
 
   return (
-    <section className="w-full pt-14 md:pt-6 pb-0 bg-[#080402] border-b border-[var(--border-ember)]">
+    <section className="w-full pt-14 md:pt-6 pb-0 bg-[#080402] border-b border-[var(--border-ember)] overflow-x-hidden">
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20">
         
         {/* Top Subtitle Badge */}
@@ -68,36 +68,38 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
           <span>100% HALAL & NO BEEF</span>
         </div>
 
-        {/* Mobile View Title: Exact 10rem for IRANI KOYLA & 8rem for SHAWARMA (<768px) */}
-        <div className="block md:hidden pb-4">
-          <div className="flex flex-col space-y-0">
-            {/* Row 1 & 2: Massive IRANI KOYLA (10rem) on Left, Tall Skewer on Right */}
-            <div className="flex items-center justify-between w-full">
-              <div className="flex flex-col leading-[0.75]">
-                <h1 className="font-poster-tall text-[10rem] text-white uppercase tracking-tighter leading-[0.75]">
+        {/* Mobile View Title: Fluid 100% Screen Width Fitting without cutoff or overflow (<768px) */}
+        <div className="block md:hidden pb-3 pt-1 w-full overflow-hidden">
+          <div className="flex flex-col space-y-1 w-full max-w-full">
+            
+            {/* Row 1 & 2: IRANI KOYLA on Left, Skewer Image on Right */}
+            <div className="flex items-center justify-between w-full max-w-full overflow-hidden">
+              <div className="flex flex-col leading-[0.82] shrink-0">
+                <h1 className="font-poster-tall text-[14vw] xs:text-[15vw] text-white uppercase tracking-tighter leading-[0.82] whitespace-nowrap">
                   IRANI
                 </h1>
-                <h1 className="font-poster-tall text-[10rem] text-white uppercase tracking-tighter leading-[0.75]">
+                <h1 className="font-poster-tall text-[14vw] xs:text-[15vw] text-white uppercase tracking-tighter leading-[0.82] whitespace-nowrap">
                   KOYLA
                 </h1>
               </div>
 
-              {/* Skewer Image standing tall on the right */}
-              <div className="shrink-0 pl-2">
+              {/* Skewer Image standing tall beside IRANI KOYLA - perfectly scaled within container */}
+              <div className="shrink-0 pl-1 max-w-[38%]">
                 <img
                   src="/shawarma-skewer.png"
                   alt="Irani Koyla Shawarma Skewer"
-                  className="h-[16rem] w-auto object-contain"
+                  className="h-[26vw] xs:h-[28vw] max-h-[170px] w-auto object-contain block"
                 />
               </div>
             </div>
 
-            {/* Row 3: SHAWARMA (8rem) spanning full width below in giant fire heat gradient */}
-            <div className="w-full pt-1">
-              <h2 className="font-poster-tall text-[8rem] fire-heat-text uppercase tracking-tighter leading-[0.75] w-full text-center">
+            {/* Row 3: SHAWARMA spanning full width below with zero cutoff */}
+            <div className="w-full max-w-full overflow-hidden pt-0.5">
+              <h2 className="font-poster-tall text-[13.5vw] xs:text-[14.2vw] fire-heat-text uppercase tracking-tighter leading-[0.82] w-full text-center whitespace-nowrap">
                 SHAWARMA
               </h2>
             </div>
+
           </div>
         </div>
 
@@ -146,7 +148,7 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
 
         {/* Hero Visual Box */}
         <div className="mt-3 sm:mt-6 relative overflow-hidden bg-[#150d0a] border border-[var(--border-ember)] rounded-2xl sm:rounded-3xl shadow-2xl">
-          <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] xl:aspect-[2.2/1] min-h-[260px] sm:min-h-[440px] lg:min-h-[520px] w-full overflow-hidden">
+          <div className="relative aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] xl:aspect-[2.2/1] min-h-[240px] sm:min-h-[440px] lg:min-h-[520px] w-full overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=2000&q=85"
               alt="Irani Koyla Shawarma live counter"
@@ -157,7 +159,7 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
           </div>
         </div>
 
-        {/* 4 Core Metrics Grid with Icon Highlights */}
+        {/* 4 Core Metrics Grid */}
         <div className="my-4 sm:my-6 grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
           {CORE_INVESTMENT_METRICS.map((metric, idx) => {
             const IconComponent = METRIC_ICONS[idx] || IndianRupee;

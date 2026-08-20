@@ -68,18 +68,24 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
           <span>100% HALAL & NO BEEF</span>
         </div>
 
-        {/* Mobile View Title: Container-Query Scale (@container) to stay 100% inside padded bounds (<768px) */}
+        {/* Mobile View Title: Anton Font Calibrated to fill 70% / 30% / 100% Edge-to-Edge (<768px) */}
         <div className="block md:hidden pb-2 pt-0 w-full overflow-hidden @container">
           <div className="flex flex-col w-full max-w-full m-0 p-0">
             
-            {/* Row 1 & 2: IRANI KOYLA (70% width) + Skewer Image (30% width) */}
+            {/* Row 1 & 2: IRANI KOYLA (covering 70% width) + Skewer Image (covering 30% width) */}
             <div className="flex items-center justify-between w-full max-w-full overflow-hidden m-0 p-0">
               {/* 70% Width Column for IRANI KOYLA */}
-              <div className="w-[70%] shrink-0 flex flex-col leading-[0.78] justify-center m-0 p-0">
-                <h1 className="font-poster-tall text-[22.5cqw] text-white uppercase tracking-tighter leading-[0.78] m-0 p-0 block whitespace-nowrap">
+              <div className="w-[70%] shrink-0 flex flex-col justify-center m-0 p-0 leading-[0.82]">
+                <h1 
+                  className="font-poster text-white uppercase tracking-tighter leading-[0.82] m-0 p-0 block whitespace-nowrap"
+                  style={{ fontSize: '35.5cqw' }}
+                >
                   IRANI
                 </h1>
-                <h1 className="font-poster-tall text-[22.5cqw] text-white uppercase tracking-tighter leading-[0.78] m-0 p-0 block whitespace-nowrap">
+                <h1 
+                  className="font-poster text-white uppercase tracking-tighter leading-[0.82] m-0 p-0 block whitespace-nowrap"
+                  style={{ fontSize: '35.5cqw' }}
+                >
                   KOYLA
                 </h1>
               </div>
@@ -89,14 +95,17 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
                 <img
                   src="/shawarma-skewer.png"
                   alt="Irani Koyla Shawarma Skewer"
-                  className="w-[93%] h-auto max-h-[195px] object-contain block m-0 p-0"
+                  className="w-full h-auto max-h-[220px] object-contain block m-0 p-0"
                 />
               </div>
             </div>
 
-            {/* Row 3: SHAWARMA (100% container width with zero cutoff) */}
+            {/* Row 3: SHAWARMA (covering 100% container width edge-to-edge) */}
             <div className="w-full max-w-full overflow-hidden m-0 p-0">
-              <h2 className="font-poster-tall text-[17.5cqw] fire-heat-text uppercase tracking-tighter leading-[0.78] w-full text-center block whitespace-nowrap m-0 p-0">
+              <h2 
+                className="font-poster fire-heat-text uppercase tracking-tighter leading-[0.82] w-full text-center block whitespace-nowrap m-0 p-0"
+                style={{ fontSize: '25.2cqw' }}
+              >
                 SHAWARMA
               </h2>
             </div>
@@ -176,7 +185,7 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
                     </span>
                     <IconComponent className="w-5 h-5 text-[#ffb703] shrink-0" />
                   </div>
-                  <div className="font-condensed font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wide text-white mt-1">
+                  <div className="font-condensed font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wide text-[#ffffff] mt-1">
                     {metric.label}
                   </div>
                 </div>
@@ -194,7 +203,7 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
         <div className="animate-ticker flex whitespace-nowrap">
           {[...FRANCHISE_TICKER, ...FRANCHISE_TICKER, ...FRANCHISE_TICKER].map((item, idx) => (
             <div key={idx} className="flex items-center mx-3 sm:mx-4">
-              <span className="font-condensed font-extrabold text-xs sm:text-sm tracking-widest text-white uppercase">
+              <span className="font-condensed font-extrabold text-xs sm:text-sm tracking-widest text-[#ffffff] uppercase">
                 {item}
               </span>
               <span className="ml-3 sm:ml-4 text-[#ffb703] text-xs">✦</span>

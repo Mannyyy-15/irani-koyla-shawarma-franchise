@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-poster: 'Anton', 'Bebas Neue', sans-serif;
+    --font-poster-tall: 'Bebas Neue', 'Anton', sans-serif;
+    --font-condensed: 'Barlow Condensed', 'Oswald', sans-serif;
+    --font-mono-stamp: 'Space Mono', monospace;
+    --font-script: 'Caveat', cursive;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+    /* Warm Deep Obsidian Charcoal Hearth Design Tokens (Matching Hero & Footer) */
+    --koyla-black: #080402;
+    --koyla-dark: #0c0604;
+    --koyla-card: #150d0a;
+    --koyla-card-hover: #1f130e;
+    
+    /* Warm Charcoal Ember Borders */
+    --border-ember: #2d160e;
+    --border-ember-hover: #6e2a14;
+    
+    --gold-accent: #ffb703;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--koyla-black);
+    color: #ffffff;
+  }
+
+  .font-poster {
+    font-family: var(--font-poster);
+    letter-spacing: -0.01em;
+  }
+
+  .font-poster-tall {
+    font-family: var(--font-poster-tall);
+    letter-spacing: -0.01em;
+  }
+
+  .font-condensed {
+    font-family: var(--font-condensed);
+  }
+
+  .font-mono-stamp {
+    font-family: var(--font-mono-stamp);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+/* Hardware-Accelerated Deep Charcoal Hearth Background */
+.paper-texture {
+  position: relative;
+  background-color: #080402;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(255, 106, 0, 0.12) 0%, transparent 65%),
+    linear-gradient(180deg, #080402 0%, #0d0705 50%, #080402 100%);
+  background-size: 100% 100%, 100% 100%;
+  background-position: center top, center;
+}
+
+/* Smooth Card Hover Lift & Glow Animations */
+.vintage-card, .group {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vintage-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-ember-hover);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85), 0 0 20px rgba(255, 183, 3, 0.12);
+}
+
+/* Brilliant Molten Ember Gradient Text */
+.text-fire-gradient {
+  background: linear-gradient(135deg, #ff6f00 0%, #ffab00 50%, #ffd54f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(255, 111, 0, 0.2));
+}
+
+/* Animated Heat Fire Text */
+.fire-heat-text {
+  background-image: url("https://dl.dropbox.com/s/r2s8s2r17wi0xm6/flame.png?dl=0");
+  background-position: 0 -1000px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fire 4s linear infinite;
+}
+
+@keyframes fire {
+  0% {
+    background-position: 0% -50%;
+  }
+  100% {
+    background-position: 0% -30%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fire-heat-text {
+    animation: none;
+  }
+}
+
+/* Refined Warm Amber-Gold Button Gradient with Glow Animations */
+.bg-fire-gradient {
+  background: linear-gradient(135deg, #e65100 0%, #ff8800 50%, #ffb703 100%);
+  color: #080402;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(255, 136, 0, 0.25);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.bg-fire-gradient:hover {
+  background: linear-gradient(135deg, #ff6d00 0%, #ffa000 50%, #ffc425 100%);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 30px rgba(255, 183, 3, 0.4);
+}
+
+.bg-fire-gradient:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Ticker Animation */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 25s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #080402;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d160e;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb703;
+}
+
+/* Optimized Lightweight Filmy Grain Overlay (Zero scroll lag) */
+.filmy-grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1'/></filter><rect width='100%25' height='100%25' filter='url(%23g)'/></svg>");
+  background-repeat: repeat;
+}
+
+/* Lenis Smooth Scroll Helper Rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

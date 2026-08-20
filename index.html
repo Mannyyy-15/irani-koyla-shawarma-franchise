@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <script>
+      // Compatibility patch for sandboxed iframe environments where window.fetch has only a getter
+      (function() {
+        try {
+          var _f = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return _f; },
+            set: function(fn) { _f = fn; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          try {
+            var proto = Object.getPrototypeOf(window);
+            if (proto) {
+              var _pf = proto.fetch;
+              Object.defineProperty(proto, 'fetch', {
+                get: function() { return _pf; },
+                set: function(fn) { _pf = fn; },
+                configurable: true,
+                enumerable: true
+              });
+            }
+          } catch (e2) {}
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRANI KOYLA SHAWARMA | Official Franchise Opportunities & Investment Portal</title>
+    <meta name="description" content="Explore high-margin food franchise opportunities with Irani Koyla Shawarma. ₹8 Lakh one-time franchise fee, 5% low royalty, ~35% net profit margin, 14-month payback period, and complete turnkey store support." />
+    <meta name="keywords" content="Irani Koyla Shawarma franchise, food franchise India, QSR franchise opportunity, charcoal shawarma business, high margin franchise, food business investment, restaurant franchise Virar" />
+    <link rel="canonical" href="https://iranikoylashawarma.com/" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌯</text></svg>" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="IRANI KOYLA SHAWARMA | Authentic Charcoal Shawarma Franchise" />
+    <meta property="og:description" content="Proven unit economics, ~35% net operating margin, ₹8L one-time franchise fee, low 5% royalty, and 50-day turnkey store setup. Apply for your city territory." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Irani Koyla Shawarma Franchise Opportunities" />
+    <meta name="twitter:description" content="Own an authentic Irani Koyla Shawarma store. High daily repeat footfall, ₹8L franchise fee, 5% royalty, and complete central spice supply." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Schema.org JSON-LD Structured Data for Local Business & Franchise -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FastFoodRestaurant",
+        "name": "Irani Koyla Shawarma",
+        "description": "Authentic Irani charcoal-smoked shawarma franchise network in India.",
+        "url": "https://iranikoylashawarma.com",
+        "telephone": "+91 93240 76994",
+        "email": "franchise@iranikoylashawarma.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Virar",
+          "addressRegion": "Maharashtra",
+          "addressCountry": "IN"
+        },
+        "servesCuisine": "Middle Eastern Shawarma",
+        "priceRange": "₹80 - ₹200"
+      }
+    </script>
+
+    <!-- Google Fonts Preconnect & Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Bebas+Neue&family=Caveat:wght@600;700&family=Oswald:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#080402] text-[#ffffff] antialiased selection:bg-[#ff5500] selection:text-white font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

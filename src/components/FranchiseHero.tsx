@@ -62,29 +62,29 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
       <div className="w-full px-4 sm:px-6 md:px-10 lg:px-12 xl:px-16 2xl:px-20">
         
         {/* Top Subtitle Badge */}
-        <div className="flex items-center space-x-2 text-xs sm:text-sm font-condensed font-extrabold text-[#ffb703] uppercase tracking-widest mb-1.5">
+        <div className="flex items-center space-x-2 text-xs sm:text-sm font-condensed font-extrabold text-[#ffb703] uppercase tracking-widest mb-2">
           <span>REAL KOYLA SMOKE</span>
           <span className="text-[#ff5500]">🔥</span>
           <span>100% HALAL & NO BEEF</span>
         </div>
 
-        {/* Mobile View Title: Anton Font Calibrated to fill 70% / 30% / 100% Edge-to-Edge (<768px) */}
-        <div className="block md:hidden pb-2 pt-0 w-full overflow-hidden @container">
-          <div className="flex flex-col w-full max-w-full m-0 p-0">
+        {/* Mobile View Title: Anton Font with Comfortable Vertical Spacing & Fiery Animation (<768px) */}
+        <div className="block md:hidden pb-3 pt-1 w-full overflow-hidden @container">
+          <div className="flex flex-col space-y-1.5 w-full max-w-full m-0 p-0">
             
             {/* Row 1 & 2: IRANI KOYLA (covering 70% width) + Skewer Image (covering 30% width) */}
             <div className="flex items-center justify-between w-full max-w-full overflow-hidden m-0 p-0">
               {/* 70% Width Column for IRANI KOYLA */}
-              <div className="w-[70%] shrink-0 flex flex-col justify-center m-0 p-0 leading-[0.82]">
+              <div className="w-[70%] shrink-0 flex flex-col justify-center m-0 p-0 leading-[0.92]">
                 <h1 
-                  className="font-poster text-white uppercase tracking-tighter leading-[0.82] m-0 p-0 block whitespace-nowrap"
-                  style={{ fontSize: '35.5cqw' }}
+                  className="font-poster text-white uppercase tracking-tighter leading-[0.92] m-0 p-0 block whitespace-nowrap"
+                  style={{ fontSize: '35cqw' }}
                 >
                   IRANI
                 </h1>
                 <h1 
-                  className="font-poster text-white uppercase tracking-tighter leading-[0.82] m-0 p-0 block whitespace-nowrap"
-                  style={{ fontSize: '35.5cqw' }}
+                  className="font-poster text-white uppercase tracking-tighter leading-[0.92] m-0 p-0 block whitespace-nowrap mt-1"
+                  style={{ fontSize: '35cqw' }}
                 >
                   KOYLA
                 </h1>
@@ -100,11 +100,11 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
               </div>
             </div>
 
-            {/* Row 3: SHAWARMA (covering 100% container width edge-to-edge) */}
-            <div className="w-full max-w-full overflow-hidden m-0 p-0">
+            {/* Row 3: SHAWARMA (covering 100% container width with animated fiery flame text) */}
+            <div className="w-full max-w-full overflow-hidden m-0 p-0 pt-1">
               <h2 
-                className="font-poster fire-heat-text uppercase tracking-tighter leading-[0.82] w-full text-center block whitespace-nowrap m-0 p-0"
-                style={{ fontSize: '25.2cqw' }}
+                className="font-poster fire-heat-text uppercase tracking-tighter leading-[0.92] w-full text-center block whitespace-nowrap m-0 p-0"
+                style={{ fontSize: '25cqw' }}
               >
                 SHAWARMA
               </h2>

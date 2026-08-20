@@ -15,11 +15,9 @@ import { FranchiseFaqSection } from './components/FranchiseFaqSection';
 import { ContactSection } from './components/ContactSection';
 import { FranchiseFooter } from './components/FranchiseFooter';
 import { FranchiseApplicationModal } from './components/FranchiseApplicationModal';
-import { InvestmentDeckModal } from './components/InvestmentDeckModal';
 
 export default function App() {
   const [isApplyModalOpen, setIsApplyModalOpen] = useState<boolean>(false);
-  const [isDeckModalOpen, setIsDeckModalOpen] = useState<boolean>(false);
   const [selectedModelPrefill, setSelectedModelPrefill] = useState<string>('Irani Koyla Shawarma Standard Store (₹8L Franchise Fee)');
   const [selectedTerritoryPrefill, setSelectedTerritoryPrefill] = useState<string>('');
   const [selectedRoiPrefill, setSelectedRoiPrefill] = useState<string>('');
@@ -75,6 +73,17 @@ export default function App() {
     setIsApplyModalOpen(true);
   };
 
+  // Direct PDF Download of the Official 5-Page Franchise Investment Deck
+  const handleDownloadDeck = () => {
+    const link = document.createElement('a');
+    link.href = '/Irani-Koyla-Shawarma-Franchise-Deck.pdf';
+    link.download = 'Irani-Koyla-Shawarma-Franchise-Deck.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-h-screen bg-[#080402] paper-texture text-[#ffffff] selection:bg-[#ff5500] selection:text-white overflow-x-hidden font-sans relative">
       {/* Optimized Lightweight Filmy Grain Overlay */}
@@ -83,7 +92,7 @@ export default function App() {
       {/* Top Franchise Navigation Header */}
       <Navbar
         onOpenApply={() => handleOpenApply()}
-        onOpenFdd={() => setIsDeckModalOpen(true)}
+        onOpenFdd={handleDownloadDeck}
       />
 
       {/* Main Content Sections */}
@@ -91,7 +100,7 @@ export default function App() {
         {/* Section 1: Hero & Real-time Marquee Ticker */}
         <FranchiseHero
           onOpenApply={() => handleOpenApply()}
-          onOpenFdd={() => setIsDeckModalOpen(true)}
+          onOpenFdd={handleDownloadDeck}
         />
 
         {/* Section 2: Key Metrics Animated Counter Banner */}
@@ -130,7 +139,7 @@ export default function App() {
 
         {/* Section 10: Franchise Due Diligence FAQs */}
         <FranchiseFaqSection
-          onOpenFdd={() => setIsDeckModalOpen(true)}
+          onOpenFdd={handleDownloadDeck}
           onOpenApply={() => handleOpenApply()}
         />
 
@@ -141,7 +150,7 @@ export default function App() {
       {/* Footer & Compliance Notice */}
       <FranchiseFooter
         onOpenApply={() => handleOpenApply()}
-        onOpenFdd={() => setIsDeckModalOpen(true)}
+        onOpenFdd={handleDownloadDeck}
       />
 
       {/* Interactive Franchise Application Modal */}
@@ -151,16 +160,6 @@ export default function App() {
         prefillModel={selectedModelPrefill}
         prefillTerritory={selectedTerritoryPrefill}
         prefillRoiEstimate={selectedRoiPrefill}
-      />
-
-      {/* Interactive Investment Deck Summary Download Modal */}
-      <InvestmentDeckModal
-        isOpen={isDeckModalOpen}
-        onClose={() => setIsDeckModalOpen(false)}
-        onOpenApply={() => {
-          setIsDeckModalOpen(false);
-          setIsApplyModalOpen(true);
-        }}
       />
     </div>
   );

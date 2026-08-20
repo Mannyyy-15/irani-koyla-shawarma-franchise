@@ -177,33 +177,18 @@ export const FAQS: FaqItem[] = [
     answer: 'The one-time Franchise Fee is ₹8,00,000. There is a low 5% monthly royalty for ongoing brand support and marketing. The agreement is valid for a lifetime.',
   },
   {
-    category: 'INVESTMENT',
-    question: 'What is the starting price for shawarma?',
-    answer: 'Our Irani Koyla Shawarma starts from ₹80 for classic wraps, up to ₹150–₹200 for jumbo cheese wraps and platters. It sells fast because it is affordable and tastes amazing.',
-  },
-  {
-    category: 'INVESTMENT',
-    question: 'What shop size do I need?',
-    answer: 'You only need a 200 to 500 Sq. Ft. shop. This is enough for the live charcoal burner, prep counter, and customer takeaway counter.',
+    category: 'LOCATION',
+    question: 'What shop size do I need for an outlet?',
+    answer: 'You only need a 200 to 500 Sq. Ft. shop space. This is optimal for high-footfall takeaway counters, live charcoal rotisserie grilling, and fast order fulfillment.',
   },
   {
     category: 'SUPPORT',
-    question: 'What support do you provide to setup the shop?',
-    answer: 'We help you with everything: 3D shop designs, equipment supply, staff training, recipe manuals, launch marketing, and ongoing business guidance.',
-  },
-  {
-    category: 'LOCATION',
-    question: 'Where can I open an outlet?',
-    answer: 'Good locations include busy main roads, near train/metro stations, college areas, food streets, and dense residential markets.',
+    question: 'What complete support do you provide to launch?',
+    answer: 'We provide 3D shop blueprints, equipment vendor tie-ups, hands-on staff training, secret spice & marinade supplies, SOP manuals, and launch marketing campaigns.',
   },
   {
     category: 'BRAND',
     question: 'Is the food 100% Halal and No Beef?',
-    answer: 'Yes. 100% Halal certified chicken only. We strictly do not serve beef. All marinades use real charcoal smoke.',
-  },
-  {
-    category: 'SUPPORT',
-    question: 'Do I need prior restaurant experience?',
-    answer: 'No. Our team trains your staff completely. Standardized spice mixes ensure consistent taste every single day without needing an expensive chef.',
+    answer: 'Yes. 100% Halal certified chicken only. We strictly do not serve beef. All marinades use real hardwood charcoal smoke for authentic taste.',
   },
 ];

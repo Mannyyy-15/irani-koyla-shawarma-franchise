@@ -8,13 +8,6 @@ interface FranchiseFaqSectionProps {
 
 export const FranchiseFaqSection: React.FC<FranchiseFaqSectionProps> = ({ onOpenFdd, onOpenApply }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const [activeCategory, setActiveCategory] = useState<string>('ALL');
-
-  const categories = ['ALL', 'INVESTMENT', 'SUPPORT', 'LOCATION', 'BRAND'];
-
-  const filteredFaqs = activeCategory === 'ALL'
-    ? FAQS
-    : FAQS.filter(f => f.category === activeCategory);
 
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -40,38 +33,21 @@ export const FranchiseFaqSection: React.FC<FranchiseFaqSectionProps> = ({ onOpen
           </div>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {categories.map(c => (
-            <button
-              key={c}
-              onClick={() => setActiveCategory(c)}
-              className={`px-4 py-2 text-xs font-condensed font-extrabold tracking-wider uppercase transition-colors border ${
-                activeCategory === c
-                  ? 'bg-[#ff5500] text-white border-[#ff5500]'
-                  : 'bg-[#150d0a] text-[#ebdcd4] border-[var(--border-ember)] hover:border-zinc-500'
-              }`}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-
-        {/* FAQ Accordion List */}
-        <div className="space-y-4 mb-10 sm:mb-12">
-          {filteredFaqs.map((faq, idx) => {
+        {/* 4 Main FAQ Accordion List */}
+        <div className="space-y-3.5 mb-10 sm:mb-12">
+          {FAQS.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="bg-[#150d0a] border border-[var(--border-ember)] hover:border-[var(--border-ember-hover)] transition-colors overflow-hidden"
+                className="bg-[#150d0a] border border-[var(--border-ember)] hover:border-[var(--border-ember-hover)] rounded-xl sm:rounded-2xl transition-all overflow-hidden shadow-lg"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4"
+                  className="w-full p-4 sm:p-6 text-left flex items-center justify-between gap-4"
                 >
                   <div className="flex items-center space-x-3 sm:space-x-4">
-                    <span className="font-condensed font-extrabold text-xs text-[#ffb703] shrink-0">
+                    <span className="font-condensed font-extrabold text-[10px] sm:text-xs text-[#ffb703] bg-[#080402] border border-[var(--border-ember)] px-2 py-0.5 uppercase tracking-wider shrink-0 rounded">
                       {faq.category}
                     </span>
                     <h3 className="font-condensed font-extrabold text-base sm:text-xl text-white uppercase tracking-wide">
@@ -84,7 +60,7 @@ export const FranchiseFaqSection: React.FC<FranchiseFaqSectionProps> = ({ onOpen
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-2 text-xs sm:text-sm text-[#ebdcd4] font-sans font-medium leading-relaxed border-t border-[var(--border-ember)]">
+                  <div className="px-4 sm:px-6 pb-5 pt-2 text-xs sm:text-sm text-[#ebdcd4] font-sans font-medium leading-relaxed border-t border-[var(--border-ember)] bg-[#0c0604]">
                     <p>{faq.answer}</p>
                   </div>
                 )}
@@ -94,7 +70,7 @@ export const FranchiseFaqSection: React.FC<FranchiseFaqSectionProps> = ({ onOpen
         </div>
 
         {/* Bottom Contact Strip */}
-        <div className="p-6 bg-[#150d0a] border border-[var(--border-ember)] flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="p-6 bg-[#150d0a] border border-[var(--border-ember)] rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h4 className="font-condensed font-extrabold text-base sm:text-lg text-white uppercase tracking-wider mb-1">
               HAVE ADDITIONAL DUE DILIGENCE QUESTIONS?
@@ -106,13 +82,13 @@ export const FranchiseFaqSection: React.FC<FranchiseFaqSectionProps> = ({ onOpen
           <div className="flex flex-wrap sm:flex-nowrap gap-3">
             <button
               onClick={onOpenFdd}
-              className="bg-[#080402] border border-[var(--border-ember)] text-white hover:border-[#ffb703] px-5 py-3 font-condensed font-bold text-xs sm:text-sm uppercase tracking-widest transition-colors whitespace-nowrap"
+              className="bg-[#080402] border border-[var(--border-ember)] text-[#ebdcd4] hover:border-[#ffb703] px-5 py-3 font-condensed font-extrabold text-xs sm:text-sm uppercase tracking-widest transition-colors whitespace-nowrap rounded-lg"
             >
-              DOWNLOAD INVESTMENT DECK
+              DOWNLOAD DECK
             </button>
             <button
               onClick={onOpenApply}
-              className="bg-fire-gradient text-white px-6 py-3 text-xs sm:text-sm font-condensed font-bold tracking-widest uppercase transition-all whitespace-nowrap shadow-lg hover:shadow-[#ff4400]/25"
+              className="bg-fire-gradient text-[#080402] px-6 py-3 text-xs sm:text-sm font-condensed font-extrabold tracking-widest uppercase transition-all whitespace-nowrap shadow-lg hover:shadow-[#ffb703]/25 rounded-lg"
             >
               APPLY NOW
             </button>

@@ -68,34 +68,34 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
           <span>100% HALAL & NO BEEF</span>
         </div>
 
-        {/* Mobile View Title: Fluid 100% Screen Width Fitting without cutoff or overflow (<768px) */}
+        {/* Mobile View Title: Exact 80% / 20% Width Ratio for Top Row & 100% for Bottom Row (<768px) */}
         <div className="block md:hidden pb-3 pt-1 w-full overflow-hidden">
           <div className="flex flex-col space-y-1 w-full max-w-full">
             
-            {/* Row 1 & 2: IRANI KOYLA on Left, Skewer Image on Right */}
+            {/* Row 1 & 2: IRANI KOYLA (80% Width) on Left, Skewer Image (20% Width) on Right */}
             <div className="flex items-center justify-between w-full max-w-full overflow-hidden">
-              <div className="flex flex-col leading-[0.82] shrink-0">
-                <h1 className="font-poster-tall text-[14vw] xs:text-[15vw] text-white uppercase tracking-tighter leading-[0.82] whitespace-nowrap">
+              <div className="w-[78%] flex flex-col leading-[0.8] shrink-0">
+                <h1 className="font-poster-tall text-[16vw] text-white uppercase tracking-tighter leading-[0.8] whitespace-nowrap w-full">
                   IRANI
                 </h1>
-                <h1 className="font-poster-tall text-[14vw] xs:text-[15vw] text-white uppercase tracking-tighter leading-[0.82] whitespace-nowrap">
+                <h1 className="font-poster-tall text-[16vw] text-white uppercase tracking-tighter leading-[0.8] whitespace-nowrap w-full">
                   KOYLA
                 </h1>
               </div>
 
-              {/* Skewer Image standing tall beside IRANI KOYLA - perfectly scaled within container */}
-              <div className="shrink-0 pl-1 max-w-[38%]">
+              {/* Skewer Image (20% Width) on Right */}
+              <div className="w-[22%] flex items-center justify-center shrink-0 pl-1">
                 <img
                   src="/shawarma-skewer.png"
                   alt="Irani Koyla Shawarma Skewer"
-                  className="h-[26vw] xs:h-[28vw] max-h-[170px] w-auto object-contain block"
+                  className="w-full h-auto max-h-[165px] object-contain block"
                 />
               </div>
             </div>
 
-            {/* Row 3: SHAWARMA spanning full width below with zero cutoff */}
+            {/* Row 3: SHAWARMA (100% Width) Spanning Full Width Below */}
             <div className="w-full max-w-full overflow-hidden pt-0.5">
-              <h2 className="font-poster-tall text-[13.5vw] xs:text-[14.2vw] fire-heat-text uppercase tracking-tighter leading-[0.82] w-full text-center whitespace-nowrap">
+              <h2 className="font-poster-tall text-[14vw] fire-heat-text uppercase tracking-tighter leading-[0.8] w-full text-center whitespace-nowrap block">
                 SHAWARMA
               </h2>
             </div>

@@ -12,6 +12,7 @@ import { TerritorySection } from './components/TerritorySection';
 import { RoadmapSection } from './components/RoadmapSection';
 import { FranchiseGallerySection } from './components/FranchiseGallerySection';
 import { FranchiseFaqSection } from './components/FranchiseFaqSection';
+import { ContactSection } from './components/ContactSection';
 import { FranchiseFooter } from './components/FranchiseFooter';
 import { FranchiseApplicationModal } from './components/FranchiseApplicationModal';
 import { InvestmentDeckModal } from './components/InvestmentDeckModal';
@@ -132,6 +133,9 @@ export default function App() {
           onOpenFdd={() => setIsDeckModalOpen(true)}
           onOpenApply={() => handleOpenApply()}
         />
+
+        {/* Section 11: Dedicated WhatsApp Integrated Contact Page Section */}
+        <ContactSection />
       </main>
 
       {/* Footer & Compliance Notice */}

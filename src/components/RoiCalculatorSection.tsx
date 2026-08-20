@@ -26,9 +26,6 @@ export const RoiCalculatorSection: React.FC<RoiCalculatorSectionProps> = ({ onOp
   const fuelPackagingCost = monthlyGross * 0.05;
   const brandRoyaltyCost = monthlyGross * 0.05;
 
-  const totalSetupCost = 1800000; // ₹18 Lakhs total turnkey setup
-  const paybackMonths = Math.max(4, Math.min(24, Math.round((totalSetupCost / (annualNetProfit || 1)) * 12)));
-
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('en-IN', {
       style: 'currency',
@@ -230,21 +227,6 @@ export const RoiCalculatorSection: React.FC<RoiCalculatorSectionProps> = ({ onOp
                   <span>Brand Monthly Royalty (5% Support & Marketing)</span>
                   <span className="text-[#ffb703] font-mono-stamp font-bold">-{formatCurrency(brandRoyaltyCost)}</span>
                 </div>
-              </div>
-
-              {/* Capital Payback Line */}
-              <div className="p-4 bg-[#080402] border border-[var(--border-ember)] flex items-center justify-between mb-6">
-                <div>
-                  <span className="font-condensed font-extrabold text-xs text-white uppercase block">
-                    ESTIMATED CAPITAL PAYBACK:
-                  </span>
-                  <span className="text-[11px] text-[#ebdcd4]/70 font-sans">
-                    On typical ₹18L total initial investment
-                  </span>
-                </div>
-                <span className="font-poster text-3xl text-[#ffb703]">
-                  ~{paybackMonths} MONTHS
-                </span>
               </div>
             </div>
 

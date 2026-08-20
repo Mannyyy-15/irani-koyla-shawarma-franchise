@@ -68,35 +68,35 @@ export const FranchiseHero: React.FC<FranchiseHeroProps> = () => {
           <span>100% HALAL & NO BEEF</span>
         </div>
 
-        {/* Mobile View Title: Exact 70% (IRANI KOYLA) / 30% (SKEWER) / 100% (SHAWARMA) Width Layout (<768px) */}
-        <div className="block md:hidden pb-2 pt-0 w-full overflow-hidden">
+        {/* Mobile View Title: Container-Query Scale (@container) to stay 100% inside padded bounds (<768px) */}
+        <div className="block md:hidden pb-2 pt-0 w-full overflow-hidden @container">
           <div className="flex flex-col w-full max-w-full m-0 p-0">
             
-            {/* Row 1 & 2: IRANI KOYLA (covering 70% width) + Skewer Image (covering 30% width) */}
+            {/* Row 1 & 2: IRANI KOYLA (70% width) + Skewer Image (30% width) */}
             <div className="flex items-center justify-between w-full max-w-full overflow-hidden m-0 p-0">
               {/* 70% Width Column for IRANI KOYLA */}
-              <div className="w-[70vw] shrink-0 flex flex-col leading-[0.78] justify-center m-0 p-0">
-                <h1 className="font-poster-tall text-[22.5vw] text-white uppercase tracking-tighter leading-[0.78] m-0 p-0 block whitespace-nowrap">
+              <div className="w-[70%] shrink-0 flex flex-col leading-[0.78] justify-center m-0 p-0">
+                <h1 className="font-poster-tall text-[22.5cqw] text-white uppercase tracking-tighter leading-[0.78] m-0 p-0 block whitespace-nowrap">
                   IRANI
                 </h1>
-                <h1 className="font-poster-tall text-[22.5vw] text-white uppercase tracking-tighter leading-[0.78] m-0 p-0 block whitespace-nowrap">
+                <h1 className="font-poster-tall text-[22.5cqw] text-white uppercase tracking-tighter leading-[0.78] m-0 p-0 block whitespace-nowrap">
                   KOYLA
                 </h1>
               </div>
 
               {/* 30% Width Column for Flaming Skewer Image */}
-              <div className="w-[30vw] shrink-0 flex items-center justify-center m-0 p-0">
+              <div className="w-[30%] shrink-0 flex items-center justify-center m-0 p-0">
                 <img
                   src="/shawarma-skewer.png"
                   alt="Irani Koyla Shawarma Skewer"
-                  className="w-[28vw] h-auto max-h-[195px] object-contain block m-0 p-0"
+                  className="w-[93%] h-auto max-h-[195px] object-contain block m-0 p-0"
                 />
               </div>
             </div>
 
-            {/* Row 3: SHAWARMA (covering 100% width with zero unwanted vertical gap) */}
+            {/* Row 3: SHAWARMA (100% container width with zero cutoff) */}
             <div className="w-full max-w-full overflow-hidden m-0 p-0">
-              <h2 className="font-poster-tall text-[17.8vw] fire-heat-text uppercase tracking-tighter leading-[0.78] w-full text-center block whitespace-nowrap m-0 p-0">
+              <h2 className="font-poster-tall text-[17.5cqw] fire-heat-text uppercase tracking-tighter leading-[0.78] w-full text-center block whitespace-nowrap m-0 p-0">
                 SHAWARMA
               </h2>
             </div>

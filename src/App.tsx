@@ -8,13 +8,10 @@ import { InvestmentThesisSection } from './components/InvestmentThesisSection';
 import { ShawarmaIndiaMovementSection } from './components/ShawarmaIndiaMovementSection';
 import { FranchiseModelsSection } from './components/FranchiseModelsSection';
 import { RoiCalculatorSection } from './components/RoiCalculatorSection';
-import { FranchiseMediaBento } from './components/FranchiseMediaBento';
 import { TerritorySection } from './components/TerritorySection';
-import { FoundersNoteSection } from './components/FoundersNoteSection';
 import { RoadmapSection } from './components/RoadmapSection';
 import { FranchiseGallerySection } from './components/FranchiseGallerySection';
 import { FranchiseFaqSection } from './components/FranchiseFaqSection';
-import { FranchiseInstagramSection } from './components/FranchiseInstagramSection';
 import { FranchiseFooter } from './components/FranchiseFooter';
 import { FranchiseApplicationModal } from './components/FranchiseApplicationModal';
 import { InvestmentDeckModal } from './components/InvestmentDeckModal';
@@ -26,7 +23,7 @@ export default function App() {
   const [selectedTerritoryPrefill, setSelectedTerritoryPrefill] = useState<string>('');
   const [selectedRoiPrefill, setSelectedRoiPrefill] = useState<string>('');
 
-  // Native-feel 120 FPS Smooth Scroll (Matching Mumbai Bazar Velocity)
+  // Native-feel 120 FPS Smooth Scroll
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.0,
@@ -96,56 +93,45 @@ export default function App() {
           onOpenFdd={() => setIsDeckModalOpen(true)}
         />
 
-        {/* Section 1.5: Key Metrics Animated Counter Banner */}
+        {/* Section 2: Key Metrics Animated Counter Banner */}
         <KeyMetricsBanner />
 
-        {/* Section 2: Investment Thesis & The Business Moat */}
+        {/* Section 3: Investment Thesis & The Business Moat */}
         <InvestmentThesisSection
           onOpenApply={() => handleOpenApply()}
         />
 
-        {/* Section 2.5: The Shawarma Movement in India (National Expansion Feature Banner) */}
+        {/* Section 4: The Shawarma Movement in India (National Expansion Feature Banner) */}
         <ShawarmaIndiaMovementSection />
 
-        {/* Section 3: Single Turnkey Store Blueprint */}
+        {/* Section 5: Single Turnkey Store Blueprint */}
         <FranchiseModelsSection
           onSelectModel={handleSelectModel}
         />
 
-        {/* Section 4: Interactive Unit Economics & 5% Royalty Simulator */}
+        {/* Section 6: Interactive Unit Economics & 5% Royalty Simulator */}
         <RoiCalculatorSection
           onOpenApplyWithEstimate={handleOpenApplyWithEstimate}
         />
 
-        {/* Section 5: High-Throughput Operations Bento */}
-        <FranchiseMediaBento />
-
-        {/* Section 6: Available Expansion Territories */}
+        {/* Section 7: Available Expansion Territories */}
         <TerritorySection
           onSelectTerritory={handleSelectTerritory}
         />
 
-        {/* Section 6.5: Founder's Note - The Passion Behind the Charcoal */}
-        <FoundersNoteSection
-          onOpenApply={() => handleOpenApply()}
-        />
-
-        {/* Section 7: 25-Day Onboarding Roadmap */}
+        {/* Section 8: 50-Day Onboarding Roadmap */}
         <RoadmapSection
           onOpenApply={() => handleOpenApply()}
         />
 
-        {/* Section 7.5: Store & Food Gallery (Placed before FAQs) */}
+        {/* Section 9: Store & Food Gallery */}
         <FranchiseGallerySection />
 
-        {/* Section 8: Franchise Due Diligence FAQs */}
+        {/* Section 10: Franchise Due Diligence FAQs */}
         <FranchiseFaqSection
           onOpenFdd={() => setIsDeckModalOpen(true)}
           onOpenApply={() => handleOpenApply()}
         />
-
-        {/* Section 9: Follow Our Journey on Instagram (Placed above Footer) */}
-        <FranchiseInstagramSection />
       </main>
 
       {/* Footer & Compliance Notice */}
